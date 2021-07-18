@@ -14,7 +14,7 @@ export const initialState = {
   turn: O
 };
 
-export const gameReducer = (state, action) => {
+export const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'ADD_SYMBOL':
       const {symbol, row, position} = action;

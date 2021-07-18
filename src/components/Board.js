@@ -44,9 +44,9 @@ class Board extends Component {
         }
         {
           this.props.won || this.props.draw ?
-          <p className="startAgain" onClick={this.props.startAgain}>
-            Click to start again!
-          </p> : false
+          <button className="startAgain" onClick={this.props.startAgain}>
+            Restart
+          </button> : false
         }
       </div>
     );

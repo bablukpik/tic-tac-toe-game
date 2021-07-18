@@ -4,20 +4,25 @@ import {connect} from 'react-redux';
 
 class Result extends Component {
   render () {
-    let result = ''; 
+    let result = '';
     if (this.props.turn) {
       result = `It's ${this.props.turn.toUpperCase()}'s turn.`;
     }
     if (this.props.won) {
-      result = `Yay! ${this.props.won.toUpperCase()} won!`
+      result = `${this.props.won.toUpperCase()} won!`
     } else if (this.props.draw) {
-      result = 'We have a draw!';
+      result = 'Draw!';
     }
     return (
       <div>
-        <p>
-          {result}
-        </p>
+        <p> {result} </p>
+        {
+          (this.props.won || this.props.draw) && (
+              <button className="startAgain" onClick={this.props.startAgain}>
+                Restart
+              </button>
+          )
+        }
       </div>
     );
   }
