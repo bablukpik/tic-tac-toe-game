@@ -1,6 +1,7 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
+import { startAgain } from "../actions/actions";
 
 class Result extends Component {
   render () {
@@ -18,9 +19,9 @@ class Result extends Component {
         <p> {result} </p>
         {
           (this.props.won || this.props.draw) && (
-              <button className="startAgain" onClick={this.props.startAgain}>
-                Restart
-              </button>
+            <button className="startAgain" onClick={this.props.startAgain}>
+              Restart
+            </button>
           )
         }
       </div>
@@ -37,7 +38,14 @@ Result.propTypes = {
 export default connect(
   ({won, turn, draw}) => ({
     won, turn, draw
-  })
+  }),
+  (dispatch) => {
+    return {
+      startAgain () {
+        dispatch(startAgain());
+      }
+    };
+  }
 )(Result);
 
 export {Result as PureResult};

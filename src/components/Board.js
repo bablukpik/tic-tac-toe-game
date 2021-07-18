@@ -4,7 +4,7 @@ import BlankSymbol from './BlankSymbol';
 import XSymbol from './XSymbol';
 import OSymbol from './OSymbol';
 import { X, O } from '../symbols/symbols';
-import { addSymbol, startAgain } from '../actions/actions';
+import { addSymbol } from '../actions/actions';
 import { connect } from 'react-redux';
 
 class Board extends Component {
@@ -42,12 +42,6 @@ class Board extends Component {
               );
             })
         }
-        {
-          this.props.won || this.props.draw ?
-          <button className="startAgain" onClick={this.props.startAgain}>
-            Restart
-          </button> : false
-        }
       </div>
     );
   }
@@ -60,7 +54,6 @@ Board.propTypes = {
   draw: PropTypes.bool.isRequired,
   wonLine: PropTypes.string,
   addSymbol: PropTypes.func.isRequired,
-  startAgain: PropTypes.func.isRequired
 };
 
 export default connect(
@@ -71,9 +64,6 @@ export default connect(
     return {
       addSymbol (rowIndex, position, symbol) {
         dispatch(addSymbol(rowIndex, position, symbol));
-      },
-      startAgain () {
-        dispatch(startAgain());
       }
     };
   }
