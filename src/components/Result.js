@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { startAgain } from "../actions/actions";
+import './App.css'
 
 class Result extends Component {
   render () {
@@ -15,7 +16,7 @@ class Result extends Component {
       result = 'Draw!';
     }
     return (
-      <div>
+      <div className='message'>
         <p> {result} </p>
         {
           (this.props.won || this.props.draw) && (

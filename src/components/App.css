@@ -40,6 +40,15 @@
   border-bottom: none;
 }
 
+.message {
+  position: absolute;
+  top: 65%;
+  left: 45%;
+  overflow: hidden;
+  text-align: center;
+  width: 200px;
+}
+
 @keyframes symbol-appear {
   from {
     transform: scale(1.9);
