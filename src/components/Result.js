@@ -20,7 +20,7 @@ class Result extends Component {
         <p> {result} </p>
         {
           (this.props.won || this.props.draw) && (
-            <button className="startAgain" onClick={this.props.startAgain}>
+            <button className="start-again" onClick={this.props.startAgain}>
               Restart
             </button>
           )
