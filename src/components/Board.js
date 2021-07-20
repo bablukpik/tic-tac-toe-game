@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import BlankSymbol from './BlankSymbol';
+import BlankCell from './BlankSymbol';
 import XSymbol from './XSymbol';
 import OSymbol from './OSymbol';
 import { X, O } from '../symbols/symbols';
@@ -19,7 +19,7 @@ class Board extends Component {
     if (symbol === O) {
       return <OSymbol key={position} position={position} />;
     }
-    return <BlankSymbol key={position} addSymbol={this.addSymbol.bind(this, rowIndex, position)} turn={this.props.turn} />;
+    return <BlankCell key={position} addSymbol={this.addSymbol.bind(this, rowIndex, position)} turn={this.props.turn} />;
   }
 
   render() {
@@ -32,13 +32,9 @@ class Board extends Component {
           Object.keys(this.props.board)
             .map(rowIndex => {
               return (
-                <div className={`row row${rowIndex}`} key={rowIndex}>
-                  {
-                    this.props.board[rowIndex].map((symbol, positon) => {
-                      return this.getSymbol(rowIndex, positon, symbol);
-                    })
-                  }
-                </div>
+                this.props.board[rowIndex].map((symbol, positon) => {
+                  return this.getSymbol(rowIndex, positon, symbol);
+                })
               );
             })
         }

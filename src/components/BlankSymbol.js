@@ -3,16 +3,15 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 export const Symbol = styled.div`
-  background-color: white;
-  border: 1px solid black;
-  height: 60px;
-  margin: 1px;
-  transition: background-color .5s ease;
+  background-color: #ffffff;
+  border: 1px solid #000000;
   width: 60px;
+  height: 60px;
+  transition: background-color .5s ease;
 `;
 
 const BlankSymbol = (props) => {
-  return <Symbol onClick={() => props.addSymbol(props.turn)}></Symbol>;
+  return <Symbol className='cell' onClick={() => props.addSymbol(props.turn)}></Symbol>;
 };
 
 BlankSymbol.propTypes = {
