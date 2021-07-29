@@ -1,4 +1,4 @@
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=bablukpik_tic-tac-toe-game&metric=alert_status)](https://sonarcloud.io/dashboard?id=bablukpik_tic-tac-toe-game)
+Sonar Status: [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=bablukpik_tic-tac-toe-game&metric=alert_status)](https://sonarcloud.io/dashboard?id=bablukpik_tic-tac-toe-game)
 
 # tic-tac-toe-game
 
